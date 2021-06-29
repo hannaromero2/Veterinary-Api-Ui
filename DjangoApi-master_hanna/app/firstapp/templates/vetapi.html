@@ -1,0 +1,70 @@
+{% load static %}
+{% include "header.html" %}
+
+<div style="width:100%; height:auto; padding-top:50px; text-align: center;">
+
+<h1> Consulta las mascotas</h1>
+
+
+<div class="limiter">
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div style="width:100%; height:auto; padding:20px; text-align: left;">      
+      <a  href="http://localhost:8001/agregar" type="button" class="btn btn-secondary btn-lg" >Agregar mascota</a>
+      </div>
+      <div class="table100 ver1 m-b-110">
+        <div class="table100-head">
+          <table>
+            <thead>
+              <tr class="row100 head">
+                <th class="cell100 column1">id</th>
+                <th class="cell100 column2">Nombre</th>
+                <th class="cell100 column3">Raza</th>
+                <th class="cell100 column4">Edad</th>
+                <th class="cell100 column5">Id dueño</th>
+                <th class="cell100 column6">Pelaje</th>
+                <th class="cell100 column7">Altura</th>
+                <th class="cell100 column8">Peso</th>
+                <th class="cell100 column9">Tipo</th>
+                <th class="cell100 column9">Opciones</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="table100-body js-pscroll">
+          <table>
+            <tbody>
+              {% for obj in mascotas.data %}
+              <tr class="row100 body">
+                <td class="cell100 column1">{{ obj.id_pet }}</td>
+                <td class="cell100 column2">{{ obj.name}}</td>
+                <td class="cell100 column2">{{ obj.breed }}</td>
+                <td class="cell100 column2">{{ obj.age}}</td>
+                <td class="cell100 column2">{{ obj.owner_id }}</td>
+                <td class="cell100 column2">{{ obj.body_color}}</td>
+                <td class="cell100 column2">{{ obj.height }}</td>
+                <td class="cell100 column2">{{ obj.weight}}</td>
+                <td class="cell100 column2">{{ obj.pet_type}}</td>
+                <td class="cell100 column2"><a href="http://localhost:8001/editar/{{obj.id_pet}}"  type="button" class="btn btn-warning">Editar</a> <a href="http://localhost:8001/pet/delete/{{obj.id_pet}}" type="button" class="btn btn-danger">Eliminar</a></td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+        </tbody>
+          </table>
+        </div>
+      </div>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% include "footer.html" %}

@@ -1,0 +1,72 @@
+{% load static %}
+
+{% include "header2.html" %}
+
+<div style="width:100%; height:auto; padding:20px; text-align: center;">
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form" method="POST" action="/pet/update/{{id_mascota}}">
+
+            <span class="contact100-form-title">
+                Edita una mascota
+            </span>
+            
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Nombre</span>
+                <input class="input100" type="text" value="{{mascotas.name}}" name="name" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Raza</span>
+                <input class="input100" type="text" value="{{mascotas.breed}}" name="breed" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Edad</span>
+                <input class="input100" type="text" value="{{mascotas.age}}" name="age" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Id dueño</span>
+                <input class="input100" type="text" value="{{mascotas.owner_id}}" name="owner_id" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Pelaje</span>
+                <input class="input100" type="text"  value="{{mascotas.body_color}}" name="body_color" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Altura</span>
+                <input class="input100" type="text" value="{{mascotas.height}}" name="height" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Peso</span>
+                <input class="input100" type="text" value="{{mascotas.weight}}" name="weight" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Tipo</span>
+                <input class="input100" type="text" value="{{mascotas.pet_type}}" name="pet_type" placeholder="Enter your name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% include "footer.html" %}
